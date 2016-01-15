@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <!--Our CSS file goes here-->
+    <link rel="stylesheet" href="style.css">
+    <!--    <link rel="stylesheet" href="styleTopBackground.css">-->
+
+</head>
+<body id="createNew">
+
+    <div class="navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="container navcolor">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="calculator.html">Calculate</a></li>
+                    <li><a href="edit.html">Edit</a></li>
+                    <li><a href="createnew.html">Create New</a></li>
+                </ul>
+                <div id='navbarname'>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Calculator 1. Darcy Law-->
+    <div class="container">
+        <div class="row ccCreateNew">
+            <div class="col-md-2">
+                <ul class="nav navbar-default nav-stacked">
+                    <li role="presentation" class="active" ><a href="javascript:createNew()" style="color:darkslategray">Generate Vars</a></li>
+                    <li role="presentation" class="active" ><a href="javascript:saveFormula()" style="color:darkslategray">Save Formula</a></li>
+                    <li role="presentation" class="active" ><a href="calculator.html" style="color:darkslategray">Test</a></li>
+                    <li role="presentation" class="active" ><a href="createnew.html" style="color:darkslategray">Clear all</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>Create New Formula</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="">Enter the number of variables</label>
+                                <p>
+                                    <input id="numofvars" type="number" name="name" value="=" placeholder="Number of Variables..">
+                                </p>
+                                <label for="">Calculated variable(letter)</label>
+                                <p>
+                                    <input id="frmlttr" type="text" name="name" value="" placeholder="F,f,etc.">
+                                </p>
+                                <label for="">Units of calc. variable</label>
+                                <p>
+                                    <input id="clcvarunits" type="text" name="name" value="" placeholder="Enter units">
+                                </p>
+                                <p>
+                                    <input type="button" onclick="createNew();" class="btn btn-default" value="Generate Vars">
+                                    &nbsp
+                                    <input type="button" onclick="saveNewFormula();" class="btn btn-default" value="Save Formula">
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Enter formula description</label>
+                                <p>
+                                    <input id="frmdscr" type="text" name="name" value="" placeholder="Description">
+                                </p>
+                                <label for="">Enter formula image link</label>
+                                <p>
+                                    <input id="frmimage" type="text" name="name" value="" placeholder="Place image link">
+                                </p>
+                                <label for="">Name of calc. variable </label>
+                                <p>
+                                    <input id="clcvarname" type="text" name="name" value="" placeholder="Name of calc. var.">
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2" id="varlttr">
+
+                            </div>
+                            <div class="col-md-4" id="vardscr">
+
+                            </div>
+                            <div class="col-md-3" id="varunit">
+
+                            </div>
+                            <div class="col-md-3" id="varvalue">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <table class="table table-bordered table-hover table-condensed">
+                            <tr>
+                                <h3>Enter the formula</h3>
+                                <label> Use brackets. Result or f(x)=..right hand side only..</label>
+                                <input  type="text" name="name" value="0" class="form-control" id='display' readonly="true">
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="leftp" value="(">(</button>
+                                </td>
+                                <td>
+                                    <button type="button" name=")" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="rightp" value=")">)</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="Math.log10(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="log10" value="Math.log10(">
+                                        log10(x)
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" name="bckspc" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="bckspc" value="bckspc">
+                                        &LeftArrow;
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="ac" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="ac" value="ac">AC</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="Math.log(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="ln" value="Math.log(">
+                                        ln(x)
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" name="Math.pow(Math.E," class="btn btn-default btn-block" onclick="buttonClicked(id)" id="exp" value="Math.pow(Math.E,">
+                                        exp(x)
+                                    </button>
+                                </td>
+                                <td>
+                                    <button type="button" name="Math.pow(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="pow" value="Math.pow(">pow(x,y)</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="7" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="seven"    value="7">7</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="8" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="eight"    value="8">8</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="9" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="nine"    value="9">9</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="/" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="/"        value="/">/</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="4" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="four"    value="4">4</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="5" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="five"    value="5">5</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="6" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="six"    value="6">6</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="*" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="*"        value="*">*</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="1" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="one"      value="1">1</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="2" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="two"      value="2">2</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="3" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="three"    value="3">3</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="-" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="-"        value="-"><b>-</b></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button type="button" name="0" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="zero"    value="0">0</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="+" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="+"        value="+">+</button>
+                                </td>
+                                <td>
+                                    <button type="button" name="." class="btn btn-default btn-block" onclick="buttonClicked(id)" id="dot"        value="."><b>.</b></button>
+                                </td>
+                                <td>
+                                    <button type="button" name="," class="btn btn-default btn-block" onclick="buttonClicked(id)" id="comma" value=","><b>,</b></button>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="table table-bordered table-hover table-condensed" id="calculator">
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Static Navbar-->
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bottom-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bottom-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="http://www.spe.org/training/docs/studyguide.pdf">SPE Ceritification</a></li>
+                    <li><a href="https://engineers.texas.gov/lic_basic.htm">TX Board PE Licensing</a></li>
+                    <li><a href="users.html">Community</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav-pills">
+                    <li>
+                        <a href="http://facebook.com/" class="btn btn-social-icon btn-facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/in/"  class="btn btn-social-icon btn-linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script src="app.js" charset="utf-8">   </script>
+</body>
+</html>

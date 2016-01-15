@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <!--Our CSS file goes here-->
+    <link rel="stylesheet" href="style.css">
+    <!--    <link rel="stylesheet" href="styleTopBackground.css">-->
+
+</head>
+<body id="edit">
+
+    <div class="navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="container navcolor">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="calculator.html">Calculate</a></li>
+                    <li><a href="edit.html">Edit</a></li>
+                    <li><a href="createnew.html">Create New</a></li>
+                </ul>
+                <div id='navbarname'>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ccCreateNew">
+                <div class="row">
+                    <div class="col-md-2" id="displayEditMenuHTML">
+
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            <div class="col-md-7">
+
+                                <h3>Edit Formula</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="">The number of variables</label>
+                                        <p>
+                                            <input id="ednumofvars" type="number" name="name" value="">
+                                        </p>
+                                        <label for="">Calculated variable(letter)</label>
+                                        <p>
+                                            <input id="edfrmlttr" type="text" name="name" value="" placeholder="F,f,etc.">
+                                        </p>
+                                        <label for="">Units of calc. variable</label>
+                                        <p>
+                                            <input id="edclcvarunits" type="text" name="name" value="" placeholder="Enter units">
+                                        </p>
+                                        <p>
+                                            <input type="button" onclick="saveEditedFormula();" class="btn btn-default" value="Save Formula">
+                                            &nbsp <input type="button" onclick="addVar()" class="btn btn-default" value="Add Variable">
+
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">Formula description</label>
+                                        <p>
+                                            <input id="edfrmdscr" type="text" name="name" value="" placeholder="Description">
+                                        </p>
+                                        <label for="">Formula image link</label>
+                                        <p>
+                                            <input id="edfrmimage" type="text" name="name" value="" placeholder="Image link">
+                                        </p>
+                                        <label for="">Name of calc. variable </label>
+                                        <p>
+                                            <input id="edclcvarname" type="text" name="name" value="" placeholder="Name of calc. var.">
+                                        </p>
+                                        <p>
+                                            <input type="button" onclick="deleteFormula()" class="btn btn-default" value="Delete">
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2" id="edvarlttr">
+
+                                    </div>
+                                    <div class="col-md-4" id="edvardscr">
+
+                                    </div>
+                                    <div class="col-md-3" id="edvarunit">
+
+                                    </div>
+                                    <div class="col-md-3" id="edvarvalue">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <table class="table table-bordered table-hover table-condensed">
+                                    <tr>
+                                        <h3>Edit the expression</h3>
+                                        <label> Use brackets. Edit right hand side only..</label>
+                                        <textarea elastic name="name" value="0" class="form-control righttext" id='display' readonly="true" height="40"></textarea>
+                                        <!--<input type="text" name="name" value="0" class="form-control righttext" id='display'>-->
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" name="(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="leftp" value="(">(</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name=")" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="rightp" value=")">)</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="Math.log10(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="log10" value="Math.log10(">
+                                                log10(x)
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="bckspc" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="bckspc" value="bckspc">
+                                                &LeftArrow;
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" name="ac" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="ac" value="ac">AC</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="Math.log(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="ln" value="log(">
+                                                log(x)
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="Math.pow(Math.E," class="btn btn-default btn-block" onclick="buttonClicked(id)" id="exp" value="exp(">
+                                                exp(x)
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="Math.pow(" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="pow" value="Math.pow(">pow(x,y)</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" name="7" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="seven"    value="7">7</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="8" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="eight"    value="8">8</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="9" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="nine"    value="9">9</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="/" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="/"        value="/">/</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" name="4" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="four"    value="4">4</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="5" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="five"    value="5">5</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="6" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="six"    value="6">6</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="*" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="*"        value="*">*</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" name="1" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="one"      value="1">1</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="2" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="two"      value="2">2</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="3" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="three"    value="3">3</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="-" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="-"        value="-"><b>-</b></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" name="0" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="zero"    value="0">0</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="+" class="btn btn-default btn-block" onclick="buttonClicked(id)" id="+"        value="+">+</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="." class="btn btn-default btn-block" onclick="buttonClicked(id)" id="dot"        value="."><b>.</b></button>
+                                        </td>
+                                        <td>
+                                            <button type="button" name="," class="btn btn-default btn-block" onclick="buttonClicked(id)" id="comma" value=","><b>,</b></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="table table-bordered table-hover table-condensed" id="edcalculator">
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Static Navbar-->
+
+
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bottom-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bottom-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="http://www.spe.org/training/docs/studyguide.pdf">SPE Ceritification</a></li>
+                    <li><a href="https://engineers.texas.gov/lic_basic.htm">TX Board PE Licensing</a></li>
+                    <li><a href="users.html">Community</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav-pills">
+                    <li>
+                        <a href="http://facebook.com/" class="btn btn-social-icon btn-facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/in/"  class="btn btn-social-icon btn-linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script src="app.js" charset="utf-8">   </script>
+</body>
+</html>

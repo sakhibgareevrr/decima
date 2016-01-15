@@ -1,0 +1,130 @@
+/*div {
+    border: 1px solid red;
+}*/
+
+body {
+    font-family: 'Questrial', sans-serif;
+}
+
+.navcolor {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.form-control {
+    border-radius: 0 !important;
+}
+
+.btn {
+    border-radius: 0 !important;
+}
+
+#display {
+resize: vertical;
+max-height:200px;
+}
+
+.ccTopImage {
+    height: 681px;
+    margin-top: 50px;
+    background-image: url("mathematics-chalkboards.png");
+    filter: alpha(Opacity=90);
+    opacity: 0.95;
+}
+
+.ccTopImage1 {
+    height: 685px;
+    margin-top: 50px;
+    background-image: url("mathematics-chalkboards.png");
+    filter: alpha(Opacity=90);
+    opacity: 0.95;
+    color: white;
+
+}
+
+.ccTopImage2 {
+    min-height: 685px;
+    margin-top: 50px;
+    background-image: url("mathematics-chalkboards.png");
+    filter: alpha(Opacity=90);
+    opacity: 0.95;
+    color: white;
+    display: table-cell;
+}
+
+.reginput,.edinput {
+    color:black;
+    font-weight: bold;
+}
+
+.ccaboveLogo {
+    height: 230px;
+
+}
+
+.ccLogo {
+    text-align: center;
+    height: 120px;
+    font-size: 70px;
+    color: white;
+}
+.ccpTek {
+    font-size: 20px;
+    height: 180px;
+    text-shadow: 3px 2px rgb(38, 46, 46);
+    color: lightgray;
+    text-align:center;
+
+}
+
+.ccSearch {
+    text-align: right;
+    padding-top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.mySearchButton {
+    color: black;
+    /*font-family: monospace;*/
+    font-size: 20px;
+}
+
+.ccCitation {
+    height: 70px;
+    font-size: 20px;
+    color: rgb(71, 74, 67);
+/*    font-family: monospace;*/
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.ccImageBlock {
+    height: 350px;
+}
+
+.col-xs-6 {
+    color: rgb(50, 51, 43);
+}
+
+.ccCalculator {
+    margin-top: 60px;
+    border-radius: 0 !important;
+    height: 685px;
+
+}
+
+.ccCreateNew {
+    padding-top: 60px;
+    border-radius: 0 !important;
+    min-height: 685px;
+    display: table-cell;
+}
+
+
+input:hover {
+    background-color: lightgray !important;
+}
+
+input[type=text], input[type=password] {
+    background-color: rgba(241, 220, 220, 0.52);
+}

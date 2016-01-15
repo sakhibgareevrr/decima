@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <!--Our CSS file goes here-->
+    <link rel="stylesheet" href="style.css">
+    <!--    <link rel="stylesheet" href="styleTopBackground.css">-->
+
+</head>
+<body id="calculator">
+
+    <div class="navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="container navcolor">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="calculator.html">Calculate</a></li>
+                    <li><a href="edit.html">Edit</a></li>
+                    <li><a href="createnew.html">Create New</a></li>
+                </ul>
+                <div id='navbarname'>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--Calculator 1. Darcy Law-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ccCalculator">
+                <div class="row">
+                    <div class="col-md-2" id="displayMenuHTML">
+
+                    </div>
+                    <div class="col-md-5">
+                        <div class="col-md-6" id="displayInputHTML">
+                            <br><br>
+                        </div>
+                        <div class="col-md-6" id="displayOutputHTML">
+
+                        </div>
+                    </div>
+                    <div class="col-md-5 form-group" id="displayEquationHTML">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Static Navbar-->
+    <div class="navbar navbar-default navbar-bottom" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bottom-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bottom-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="http://www.spe.org/training/docs/studyguide.pdf">SPE Ceritification</a></li>
+                    <li><a href="https://engineers.texas.gov/lic_basic.htm">TX Board PE Licensing</a></li>
+                    <li><a href="users.html">Community</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav-pills">
+                    <li>
+                        <a href="http://facebook.com/" class="btn btn-social-icon btn-facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/in/"  class="btn btn-social-icon btn-linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js" charset="utf-8">   </script>
+</body>
+</html>

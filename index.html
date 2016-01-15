@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <!--Our CSS file goes here-->
+    <link rel="stylesheet" href="style.css">
+    <!--    <link rel="stylesheet" href="styleTopBackground.css">-->
+
+</head>
+<body id="homepage">
+    <!--Static Navbar-->
+    <div class="navbar navbar navbar-inverse navbar-fixed-top">
+        <div class="container navcolor">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="calculator.html">Calculate</a></li>
+                    <li><a href="edit.html">Edit</a></li>
+                    <li><a href="createnew.html">Create New</a></li>
+                </ul>
+                <div id='navbarname'>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <!--Logo and Moto-->
+        <div class="row">
+            <div class="col-md-12 ccTopImage">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 ccaboveLogo">
+                    </div>
+                    <div class="col-md-6 col-md-offset-3 ccLogo">
+                        <p >
+                            decima
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-md-offset-4 ccpTek">
+                        <input type="search" results=10 name="name" value="" placeholder="Search..." required="">
+                        <input type="button" name="search" value="Search" class="mySearchButton">
+                        <br><br>
+                        <div id="logreg">
+                            <p>
+                                <a  href="javascript:logreg()" style="color:white">Login</a> | <a href="newaccount.html" style="color:white">New Account</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!--Citation-->
+        <div class="row">
+            <div class="col-md-12 ccCitation">
+                <p>Another tool to solve old problems...</p>
+            </div>
+        </div>
+        <!--This is image section-->
+        <div class="row">
+            <div class="col-md-4 ccImageBlock ">
+                <img   src="http://s10.postimg.org/ifk4p0215/rock.png" class="img-responsive"/>
+            </div>
+            <div class="col-md-4 ccImageBlock">
+                <img   src="http://s10.postimg.org/n6p3rodop/phase_diagram.png" class="img-responsive"/>
+            </div>
+            <div class="col-md-4 ccImageBlock">
+                <img   src="http://s1.postimg.org/a1ib6jkzz/Artificial_Lift.png" class="img-responsive" />
+            </div>
+            <!--This is main blocks-->
+        </div>
+        <div class="row">
+            <div class="col-md-4 ccBlocks">
+                <h2>
+                    Petrophysics
+                </h2>
+                <p>
+                    Petrophysics studies physical and chemical properties of the rock and saturating fluids. Engineer calculates properties related to rock pore system, fluid distribution and flow characteristics. Here is few properties that can be evaluated: thickness, rock type, porosity, fluid type, fluid saturation, pressures, fluid phase permeability.
+                </p>
+                <p>
+                    <a class="btn" href="#">View details »</a>
+                </p>
+            </div>
+            <div class="col-md-4 ccBlocks">
+                <h2>
+                    Reservoir
+                </h2>
+                <p>
+                    Reservoir Engineering studies and finds the most economic way of producing the reservoir during its whole life, from the exploration to abandonment phases. At any stage in reservoir development the main question is how much the reservoir can still ecomomically produce so the forecast is one of typical products.
+                </p>
+                <p>
+                    <a class="btn" href="#">View details »</a>
+                </p>
+            </div>
+
+            <div class="col-md-4 ccBlocks">
+                <h2>
+                    Production
+                </h2>
+                <p>
+                    Production Engineering is about the study of well productivity, design and selection of subsurface equipment to produce oil and gas fluids in economic way.
+                </p>
+                <p>
+                    <a class="btn" href="#">View details »</a>
+                </p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>
+                    TX Board of Professional Engineers
+                </h2>
+                <p>
+                    Under the Texas Engineering Practice Act, only duly licensed persons may legally perform,
+                    or offer to perform engineering services for the public.
+                    To be eligible for a professional engineering license, engineers must have achieved
+                    certain professional milestones. They must have earned an engineering education, performed
+                    certain levels of engineering work experience, and passed specific examinations.
+                    If not in Texas please contact your state board of professional engineers for further details.
+                </p>
+                <p>
+                    <a class="btn" href="https://engineers.texas.gov/lic.htm">View details »</a>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>
+                    Society Of Petroleum Engineering
+                </h2>
+                <p>
+                    An opportunity to obtain international certification in Petroleum Engineering is provided
+                    by Society of Petroleum Engineers.
+                </p>
+                <p>
+                    <a class="btn" href="https://webevents.spe.org/products/spe-certification-and-pe-exam-review#tab-product_tab_overview">View details »</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--Static Navbar-->
+    <div class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bottom-menu">
+                    <span class="sf-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="" alt="" />decima</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bottom-menu">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="http://www.spe.org/training/docs/studyguide.pdf">SPE Ceritification</a></li>
+                    <li><a href="https://engineers.texas.gov/lic_basic.htm">TX Board PE Licensing</a></li>
+                    <li><a href="users.html">Community</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav-pills">
+                    <li>
+                        <a href="http://facebook.com/" class="btn btn-social-icon btn-facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/in/"  class="btn btn-social-icon btn-linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="app.js" charset="utf-8">   </script>
+</body>
+</html>
